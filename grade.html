@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Grade</title>
+	</head>
+	<body>
+	<input type="text" placeholder="Enter Tamil Mark" value="" id="tamil">
+	<input type="text" placeholder="Enter English Mark" value="" id="english">
+	<input type="text" placeholder="Enter Maths Mark" value="" id="maths">
+	<input type="text" placeholder="Enter Science Mark" value="" id="science">
+	<input type="text" placeholder="Enter Social Mark" value="" id="social">
+	<button id="btn" onclick="mark()">Total</button>
+	
+	<p id="ans"></p>
+	<p id="percent"></p>
+	<p id="grade"></p>
+	<script>
+	let total=document.getElementById("btn");
+	
+	function mark(){
+	    let m1=document.getElementById("tamil").value;
+	    let m2=document.getElementById("english").value;
+	    let m3=document.getElementById("maths").value;
+	    let m4=document.getElementById("science").value;
+	    let m5=document.getElementById("social").value;
+	    let t=(parseInt(m1)+parseInt(m2)+parseInt(m3)+parseInt(m4)+parseInt(m5))
+		document.getElementById("ans").innerHTML="Total marks = " + t;
+		let per=t/500*100
+		document.getElementById("percent").innerHTML="Percentage = " + per+"%";
+		if(per>=85){
+		    document.getElementById("grade").innerHTML="Grade = "+"A"
+		}
+		else if((per<85)&&(per>70)){
+		     document.getElementById("grade").innerHTML="Grade = "+"B"
+		}
+		else if((per<70)&&(per>55)){
+		     document.getElementById("grade").innerHTML="Grade = "+"C"
+		}
+		else if((per<55)&&(per>35)){
+		     document.getElementById("grade").innerHTML="Grade = "+"D"
+		}
+		else{
+		    document.getElementById("grade").innerHTML="Grade = "+"FAIL"
+		}
+	
+	}
+	
+	
+	
+	
+	</script>
+	
+	
+	</body>
+	</html>
